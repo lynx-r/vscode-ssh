@@ -3,7 +3,7 @@ FROM linuxserver/code-server
 
 RUN apt-get -y update
 
-RUN apt-get install openssh-server
+RUN apt-get -y install openssh-server
 
 RUN apt-get -y install speedtest-cli
 
