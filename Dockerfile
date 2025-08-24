@@ -11,9 +11,8 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 RUN sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
 # (Optional) Copy SSH public key for authorized_keys (recommended for secure access)
-RUN mkdir -p /config/.ssh
-COPY dockhost-vscode.pub /config/.ssh/authorized_keys
-RUN chmod 600 /config/.ssh/authorized_keys
+COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys
+RUN chmod 600 $HOME/.ssh/authorized_keys
 
 EXPOSE 22 
 # Start the SSH daemon
