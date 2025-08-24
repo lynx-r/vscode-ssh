@@ -1,9 +1,14 @@
 # build stage
 FROM ubuntu
 
-RUN apt-get -y update
+RUN apt-get update
 
-RUN apt-get -y install openssh-server
+RUN apt-get -y install openssh-server apache2 supervisor
+RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+EXPOSE 22 80
+CMD ["/usr/bin/supervisord"]
 
 # RUN apt-get -y install speedtest-cli
 
