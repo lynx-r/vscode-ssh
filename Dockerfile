@@ -10,8 +10,9 @@ RUN mkdir -p /var/run/sshd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
+USER root
 # (Optional) Copy SSH public key for authorized_keys (recommended for secure access)
-RUN cp dockhost-vscode.pub $HOME/.ssh/authorized_keys
+COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys
 RUN chmod 600 $HOME/.ssh/authorized_keys
 
 EXPOSE 22 
