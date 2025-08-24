@@ -1,17 +1,17 @@
 # build stage
-FROM linuxserver/code-server
+FROM ubuntu
 
 RUN apt-get -y update
 
 RUN apt-get -y install openssh-server
 
-RUN apt-get -y install speedtest-cli
+# RUN apt-get -y install speedtest-cli
 
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+# RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 
-RUN apt-get -y install nodejs
+# RUN apt-get -y install nodejs
 
-RUN npm install -g yarn
+# RUN npm install -g yarn
 
 # RUN apt-get -y install dbus-user-session
 
