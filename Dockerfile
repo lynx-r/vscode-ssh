@@ -9,6 +9,6 @@ RUN curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alp
 RUN tar -xf vscode_cli.tar.gz
 
 # RUN ./code tunnel service install
-CMD ["/bin/bash"]
-
+# CMD ["/bin/bash"]
+ENTRYPOINT ["/lib/systemd/systemd"]
 # RUN loginctl enable-linger $USER
