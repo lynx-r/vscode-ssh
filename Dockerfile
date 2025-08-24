@@ -18,21 +18,3 @@ RUN chmod 600 /config/.ssh/authorized_keys
 EXPOSE 22 
 # Start the SSH daemon
 CMD ["/usr/sbin/sshd", "-D"]
-
-# RUN apt-get -y install speedtest-cli
-
-# RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-
-# RUN apt-get -y install nodejs
-
-# RUN npm install -g yarn
-
-# RUN apt-get -y install dbus-user-session
-
-# RUN curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
-# RUN tar -xf vscode_cli.tar.gz
-
-# # RUN ./code tunnel service install
-CMD ["/bin/bash"]
-# ENTRYPOINT ["/usr/sbin/init"]
-# RUN loginctl enable-linger $USER
