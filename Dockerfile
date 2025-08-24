@@ -10,5 +10,5 @@ RUN tar -xf vscode_cli.tar.gz
 
 # RUN ./code tunnel service install
 # CMD ["/bin/bash"]
-ENTRYPOINT ["/lib/systemd/systemd"]
+ENTRYPOINT ["/usr/sbin/init"]
 # RUN loginctl enable-linger $USER
