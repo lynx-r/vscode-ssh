@@ -1,5 +1,5 @@
 # build stage
-FROM ubuntu:latest
+FROM node:latest
 
 ENV HOME /root
 
