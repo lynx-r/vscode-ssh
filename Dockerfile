@@ -3,6 +3,8 @@ FROM linuxserver/code-server
 
 RUN apt-get -y update
 
+RUN apt-get install openssh-server
+
 RUN apt-get -y install speedtest-cli
 
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
@@ -10,6 +12,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 RUN apt-get -y install nodejs
 
 RUN npm install -g yarn
+
 # RUN apt-get -y install dbus-user-session
 
 # RUN curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
