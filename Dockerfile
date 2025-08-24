@@ -1,8 +1,8 @@
 # build stage
 FROM linuxserver/code-server
 
-# RUN apt-get -y update
-# RUN apt-get -y install curl
+RUN apt-get -y update
+RUN apt-get -y install node
 # RUN apt-get -y install dbus-user-session
 
 # RUN curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
