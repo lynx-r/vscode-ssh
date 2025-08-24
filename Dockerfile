@@ -3,12 +3,20 @@ FROM ubuntu
 
 RUN apt-get update
 
-RUN apt-get -y install openssh-server apache2 supervisor
-RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN apt-get -y install openssh-server
+RUN mkdir -p /var/run/sshd
 
-EXPOSE 22 80
-CMD ["/usr/bin/supervisord"]
+# (Optional) Configure SSH: Disable password authentication and enable root login (for testing, use with caution)
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+
+# (Optional) Copy SSH public key for authorized_keys (recommended for secure access)
+# COPY ./your_public_key.pub /root/.ssh/authorized_keys
+# RUN chmod 600 /root/.ssh/authorized_keys
+
+EXPOSE 22 
+# Start the SSH daemon
+CMD ["/usr/sbin/sshd", "-D"]
 
 # RUN apt-get -y install speedtest-cli
 
