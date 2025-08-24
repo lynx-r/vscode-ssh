@@ -3,7 +3,7 @@ project: vscode-tunnel
 
 repositories:
 
-    vscode-tunnel:
+    vscode-tunnel-1:
 
         url: https://github.com/lynx-r/vscode-tunnel-test.git
         branch: main
