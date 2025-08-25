@@ -5,6 +5,8 @@ ENV HOME=/root
 
 RUN apt-get update
 
+RUN apt-get -y install vim speedtest-cli
+
 RUN apt-get -y install openssh-server
 
 RUN mkdir -p /var/run/sshd
