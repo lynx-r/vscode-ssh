@@ -9,7 +9,6 @@ repositories:
         branch: main
 
         # Set CPU and Memory for first container startup
-
         cpu: 4
         cpuFraction: 50
         memory: 2048MiB
