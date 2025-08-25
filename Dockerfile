@@ -22,6 +22,10 @@ COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys2
 RUN ln -s $HOME/vscode/extensions $HOME/extensions
 RUN ln -s $HOME/vscode/.nvm $HOME/.nvm
 RUN ln -s $HOME/vscode/.npm $HOME/.npm
+RUN ln -s $HOME/vscode/.vscode-server $HOME/.vscode-server
+RUN ln -s $HOME/vscode/.dotnet $HOME/.dotnet
+RUN ln -s $HOME/vscode/.cache $HOME/.cache
+RUN ln -s $HOME/vscode/.wget-hsts $HOME/.wget-hsts
 RUN rm $HOME/.bashrc
 RUN ln -s $HOME/vscode/.bashrc $HOME/.bashrc
 
