@@ -19,10 +19,10 @@ RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/s
 COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys2
 # RUN chmod 600 $HOME/.ssh/authorized_keys
 
-RUN ln -s $HOME/vscode/extensions ~/extensions
-RUN ln -s $HOME/vscode/.nvm ~/.nvm
-RUN ln -s $HOME/vscode/.npm ~/.npm
-RUN ln -s $HOME/vscode/.bashrc ~/.bashrc
+RUN ln -s $HOME/vscode/extensions $HOME/extensions
+RUN ln -s $HOME/vscode/.nvm $HOME/.nvm
+RUN ln -s $HOME/vscode/.npm $HOME/.npm
+RUN ln -s $HOME/vscode/.bashrc $HOME/.bashrc
 
 EXPOSE 22 
 # Start the SSH daemon
