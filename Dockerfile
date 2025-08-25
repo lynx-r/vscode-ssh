@@ -1,11 +1,12 @@
 # build stage
 FROM node:latest
 
-ENV HOME /root
+ENV HOME=/root
 
 RUN apt-get update
 
 RUN apt-get -y install openssh-server
+
 RUN mkdir -p /var/run/sshd
 
 # (Optional) Configure SSH: Disable password authentication and enable root login (for testing, use with caution)
