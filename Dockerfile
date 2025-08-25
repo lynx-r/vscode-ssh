@@ -16,18 +16,18 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 
 # (Optional) Copy SSH public key for authorized_keys (recommended for secure access)
-COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys2
+COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys
 # RUN chmod 600 $HOME/.ssh/authorized_keys
 
-RUN ln -s $HOME/vscode/extensions $HOME/extensions
-RUN ln -s $HOME/vscode/.nvm $HOME/.nvm
-RUN ln -s $HOME/vscode/.npm $HOME/.npm
-RUN ln -s $HOME/vscode/.vscode-server $HOME/.vscode-server
-RUN ln -s $HOME/vscode/.dotnet $HOME/.dotnet
-RUN ln -s $HOME/vscode/.cache $HOME/.cache
-RUN ln -s $HOME/vscode/.wget-hsts $HOME/.wget-hsts
-RUN rm $HOME/.bashrc
-RUN ln -s $HOME/vscode/.bashrc $HOME/.bashrc
+# RUN ln -s $HOME/vscode/extensions $HOME/extensions
+# RUN ln -s $HOME/vscode/.nvm $HOME/.nvm
+# RUN ln -s $HOME/vscode/.npm $HOME/.npm
+# RUN ln -s $HOME/vscode/.vscode-server $HOME/.vscode-server
+# RUN ln -s $HOME/vscode/.dotnet $HOME/.dotnet
+# RUN ln -s $HOME/vscode/.cache $HOME/.cache
+# RUN ln -s $HOME/vscode/.wget-hsts $HOME/.wget-hsts
+# RUN rm $HOME/.bashrc
+# RUN ln -s $HOME/vscode/.bashrc $HOME/.bashrc
 
 EXPOSE 22 
 # Start the SSH daemon
