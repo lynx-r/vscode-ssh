@@ -10,5 +10,5 @@ repositories:
 
         # Set CPU and Memory for first container startup
         cpu: 4
-        cpuFraction: 50
-        memory: 2048MiB
+        cpuFraction: 100
+        memory: 3072MiB
