@@ -22,6 +22,7 @@ COPY dockhost-vscode.pub $HOME/.ssh/authorized_keys2
 RUN ln -s $HOME/vscode/extensions $HOME/extensions
 RUN ln -s $HOME/vscode/.nvm $HOME/.nvm
 RUN ln -s $HOME/vscode/.npm $HOME/.npm
+RUN rm $HOME/.bashrc
 RUN ln -s $HOME/vscode/.bashrc $HOME/.bashrc
 
 EXPOSE 22 
